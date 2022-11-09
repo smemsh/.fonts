@@ -8,7 +8,6 @@ import os
 import sys
 import tempfile
 from fontTools.ttLib import TTFont, newTable
-from fontTools.ttLib.xmlImport import importXML
 
 doc = """USAGE: python /path/to/inputCustomize.py [INPUT] [--dest=OUTPUT] [OPTIONS]
 Use this script to customize one or more Input font files.
@@ -78,8 +77,8 @@ class InputModifier(object):
         maps = {
         'a': {'a': 97, 'aring': 229, 'adieresis': 228, 'acyrillic': 1072, 'aacute': 225, 'amacron': 257, 'agrave': 224, 'atilde': 227, 'acircumflex': 226, 'aogonek': 261, 'abreve': 259},
         'g':  {'gdotaccent': 289, 'gbreve': 287, 'gcircumflex': 285, 'gcommaaccent': 291, 'g': 103},
-        'i':  {'i': 105, 'iacute': 237, 'iogonek': 303, 'igrave': 236, 'itilde': 297, 'icircumflex': 238, 'imacron': 299, 'ij': 307, 'ibreve': 301, 'yicyrillic': 1111, 'idieresis': 239, 'icyrillic': 1110},
-        'l':  {'l': 108, 'lcaron': 318, 'lcommaaccent': 316, 'lacute': 314, 'lslash': 322, 'dotlessi': 305, 'ldot': 320},
+        'i':  {'i': 105, 'iacute': 237, 'iogonek': 303, 'igrave': 236, 'itilde': 297, 'icircumflex': 238, 'imacron': 299, 'ij': 307, 'ibreve': 301, 'yicyrillic': 1111, 'idieresis': 239, 'icyrillic': 1110, 'dotlessi': 305,},
+        'l':  {'l': 108, 'lcaron': 318, 'lcommaaccent': 316, 'lacute': 314, 'lslash': 322, 'ldot': 320},
         'zero': {'zero': 48},
         'asterisk':  {'asterisk': 42},
         'braces': {'braceleft': 123, 'braceright': 125}
@@ -125,7 +124,7 @@ class InputModifier(object):
 
         # write the table
         f['name'] = newTable('name')
-        importXML(f, pathToXML)
+        f.importXML(pathToXML)
     
     def changeNames(self, suffix=None):
         # this is a similar process to fourStyleFamily()
@@ -149,7 +148,7 @@ class InputModifier(object):
         
         # write the table
         f['name'] = newTable('name')
-        importXML(f, pathToXML)
+        f.importXML(pathToXML)
 
 
 

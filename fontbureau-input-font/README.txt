@@ -13,7 +13,7 @@ Please note: The entire Input font family is available at no cost for private us
 Both print/desktop and annual web licenses start at:
 	* US$5 per style
 	* US$40 for a 14-style package of one width of Sans, Serif, or Mono
-	* US$80 for a 56-style package of all widths of Sans, Serif, or Mono
+	* US$100 for a 56-style package of all widths of Sans, Serif, or Mono
 	* US$200 for the entire 168-style series
 
 Read the enclosed LICENSE.txt for more information, and learn more here: [http://input.fontbureau.com/download]
